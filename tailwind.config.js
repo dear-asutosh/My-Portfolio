@@ -7,6 +7,8 @@ export default {
         "star-movement-bottom":
           "star-movement-bottom linear infinite alternate",
         "star-movement-top": "star-movement-top linear infinite alternate",
+        "glitch-after": "glitch var(--after-duration) infinite linear alternate-reverse",
+        "glitch-before": "glitch var(--before-duration) infinite linear alternate-reverse",
       },
       keyframes: {
         "star-movement-bottom": {
@@ -17,8 +19,6 @@ export default {
           "0%": { transform: "translate(0%, 0%)", opacity: "1" },
           "100%": { transform: "translate(100%, 0%)", opacity: "0" },
         },
-      },
-      keyframes: {
         glitch: {
           "0%": { "clip-path": "inset(20% 0 50% 0)" },
           "5%": { "clip-path": "inset(10% 0 60% 0)" },
@@ -42,10 +42,6 @@ export default {
           "95%": { "clip-path": "inset(25% 0 35% 0)" },
           "100%": { "clip-path": "inset(30% 0 40% 0)" },
         },
-      },
-      animation: {
-        "glitch-after": "glitch var(--after-duration) infinite linear alternate-reverse",
-        "glitch-before": "glitch var(--before-duration) infinite linear alternate-reverse",
       },
     },
     plugins: [],
