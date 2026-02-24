@@ -1,6 +1,8 @@
 import React from 'react'
 import LandingPage from './components/Pages/HomePage/LandingPage'
 import SkillsSection from './components/Pages/SkillsPage/SkillsSection'
+import ExperienceSection from './components/Pages/ExperiencePage/ExperienceSection'
+import EducationSection from './components/Pages/EducationPage/EducationSection'
 import ProjectsSection from './components/Pages/ProjectPage/ProjectsSection'
 import Contact from './components/Pages/ContactSection/Contact'
 import Footer from './components/Pages/Footer/Footer'
@@ -35,6 +37,8 @@ const App = () => {
         <SmoothCursor />
         <LandingPage />
         <SkillsSection />
+        <ExperienceSection />
+        <EducationSection />
         <ProjectsSection />
         <Contact />
         <Footer />
