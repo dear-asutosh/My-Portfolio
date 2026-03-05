@@ -47,7 +47,7 @@ const Hero = () => {
                         <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/LeetCode_Logo_1.png" alt="LeetCode" width={40} />
                     </a>
                 </div>
-                <a href="https://drive.google.com/file/d/1QnSdT2MrI4v37GAMm7hQhf3WcWR34mSn/view?usp=sharing" className='lg-btn self-center md:self-end bg-white'>
+                <a href="https://drive.google.com/file/d/1FZXyqXH1MNFWSOrSJIDm43dOKQhGCoIL/view?usp=sharing" className='lg-btn self-center md:self-end bg-white'>
                     <div className=' text-black px-5 py-4'>
                         <div className="btn flex  justify-center items-center gap-3 rounded-full tracking-widest uppercase font-semibold">My Resume{RoundInsertDriveFile()}</div>
                     </div>
