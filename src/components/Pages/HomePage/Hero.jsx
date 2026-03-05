@@ -18,7 +18,7 @@ const Hero = () => {
 
                 <div className="flex justify-between items-center gap-4 mt-5">
                     {/* GitHub */}
-                    <a href="https://github.com/dearasutosh" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/dear-asutosh" target="_blank" rel="noopener noreferrer">
                         <img src="https://cdn-icons-png.flaticon.com/512/2504/2504911.png" alt="GitHub" width={40} />
                     </a>
 
