@@ -1,7 +1,6 @@
-"use client";
-
 import { motion, useSpring } from "motion/react";
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 // Normal hand cursor (your existing one)
 const DefaultCursorSVG = ({ isMoving }) => (
@@ -100,7 +99,7 @@ const PointerCursorSVG = ({ isMoving }) => (
 );
 
 export function SmoothCursor({
-  cursor = <DefaultCursorSVG />,
+  cursor,
   springConfig = {
     damping: 45,
     stiffness: 400,
@@ -108,6 +107,7 @@ export function SmoothCursor({
     restDelta: 0.001,
   },
 }) {
+  const [mounted, setMounted] = useState(false);
   const [isMoving, setIsMoving] = useState(false);
   const [isPointer, setIsPointer] = useState(false);
   const lastMousePos = useRef({ x: 0, y: 0 });
@@ -128,6 +128,10 @@ export function SmoothCursor({
     stiffness: 500,
     damping: 35,
   });
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const updateVelocity = (currentPos) => {
@@ -228,7 +232,9 @@ export function SmoothCursor({
     return () => window.removeEventListener("mousemove", handlePointer);
   }, []);
 
-  return (
+  if (!mounted) return null;
+
+  const cursorContent = (
     <motion.div
       style={{
         position: "fixed",
@@ -238,7 +244,7 @@ export function SmoothCursor({
         translateY: "-50%",
         rotate: rotation,
         scale: scale,
-        zIndex: 100,
+        zIndex: 99999,
         pointerEvents: "none",
         willChange: "transform",
       }}
@@ -254,6 +260,8 @@ export function SmoothCursor({
       {isPointer ? <PointerCursorSVG isMoving={isMoving} /> : <DefaultCursorSVG isMoving={isMoving} />}
     </motion.div>
   );
+
+  return createPortal(cursorContent, document.body);
 }
 
 export default SmoothCursor;
