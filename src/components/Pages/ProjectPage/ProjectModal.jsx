@@ -46,9 +46,6 @@ const ProjectModal = ({ isOpen, onClose, project }) => {
               <X size={18} />
             </button>
 
-            {/* Top accent bar */}
-            <div className="h-1 w-full bg-gradient-to-r from-cyan-500 to-indigo-600"></div>
-
             <div className="grid grid-cols-1 md:grid-cols-12 gap-0">
               {/* Left Column: Visuals & Tech Tags (5 cols) */}
               <div className="md:col-span-5 p-6 bg-[#07070f] border-b md:border-b-0 md:border-r border-gray-800/50 flex flex-col justify-between">
